@@ -132,15 +132,15 @@ function updateHighScore() {      // update high score if necessary
   }
 }
 
-function keyPressed() {     // initializing the key press event for playing the game
-  if (gameState === 'start' && key === ' ') { 
-    startGame();
-  } else if (gameState === 'play' && key === ' ') { 
-    bird.up();
-  } else if (gameState === 'end' && key === 'r') {  
-    restartGame();
-  }
-}
+// function keyPressed() {     // initializing the key press event for playing the game
+//   if (gameState === 'start' && key === ' ') { 
+//     startGame();
+//   } else if (gameState === 'play' && key === ' ') { 
+//     bird.up();
+//   } else if (gameState === 'end' && key === 'r') {  
+//     restartGame();
+//   }
+// }
 function touchStarted() {
   if (gameState === 'start') {  
     startGame();                
