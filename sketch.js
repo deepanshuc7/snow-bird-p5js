@@ -70,7 +70,7 @@ function updateAndShowSnowflakes() {
 }
 
 function showStartScreen() {
-  drawText('Flappy Bird', 48, width / 2, height / 2 - 50);                          // Display title at a fixed position
+  drawText('Snowy Bird', 48, width / 2, height / 2 - 50);                          // Display title at a fixed position
   drawText('Press SPACE or CLICK to Start', 24, width / 2, height / 2 + 50);         // Display instructions to start
 }
 
@@ -141,16 +141,29 @@ function keyPressed() {     // initializing the key press event for playing the 
     restartGame();
   }
 }
-
-function mousePressed() {             // initializing the mouse press for playing the game.
+function touchStarted() {
   if (gameState === 'start') {  
-    startGame();
+    startGame();                
   } else if (gameState === 'play') { 
-    bird.up();
+    bird.up();                 
   } else if (gameState === 'end') {  
-    restartGame();
+    restartGame();              
   }
 }
+
+function mousePressed() {
+  touchStarted();               // Call the touchStarted function to handle both mouse clicks and touch inputs becasue they work the same way 
+}
+
+// function mousePressed() {             // initializing the mouse press for playing the game.
+//   if (gameState === 'start') {  
+//     startGame();
+//   } else if (gameState === 'play') { 
+//     bird.up();
+//   } else if (gameState === 'end') {  
+//     restartGame();
+//   }
+// }
 
 function startGame() {
   gameState = 'play';            // set game state to play
